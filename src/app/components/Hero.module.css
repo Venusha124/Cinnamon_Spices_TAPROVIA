@@ -1,0 +1,183 @@
+.heroSection {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 120px;
+  overflow: hidden;
+}
+
+.bgContainer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.bgImage {
+  object-fit: cover;
+  opacity: 0.6;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, #050505, transparent, #050505);
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.subtitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 2rem;
+  color: var(--accent);
+  font-weight: bold;
+  letter-spacing: 0.8em;
+  text-transform: uppercase;
+  font-size: 10px;
+  margin-bottom: 3rem;
+}
+
+.line {
+  width: 3rem;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--accent-transparent));
+}
+
+.line:last-child {
+  background: linear-gradient(to left, transparent, var(--accent-transparent));
+}
+
+.title {
+  font-size: clamp(3.5rem, 10vw, 11rem);
+  line-height: 0.75;
+  margin-bottom: 2.5rem;
+  letter-spacing: -0.02em;
+}
+
+.title span {
+  color: var(--text-muted);
+  transition: color 0.5s ease;
+}
+
+.title span:hover {
+  color: var(--accent);
+}
+
+.description {
+  font-family: var(--font-serif);
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  color: var(--text-muted);
+  max-width: 56rem;
+  margin: 0 auto 3rem;
+  font-weight: 300;
+  line-height: 1.8;
+  font-style: italic;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 640px) {
+  .actions {
+    flex-direction: row;
+  }
+}
+
+.primaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--accent);
+  color: #000;
+  font-weight: bold;
+  height: 4rem;
+  padding: 0 2.5rem;
+  border-radius: 9999px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.primaryButton:hover {
+  transform: scale(1.05);
+  background-color: #fff;
+}
+
+.secondaryAction {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  color: var(--text-muted);
+  transition: color 0.3s ease;
+}
+
+.secondaryAction:hover {
+  color: #fff;
+}
+
+.secondaryText {
+  font-size: 9px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+}
+
+.playIcon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.secondaryAction:hover .playIcon {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: #000;
+  transform: rotate(12deg);
+}
+
+.scrollIndicator {
+  position: absolute;
+  bottom: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  color: var(--border);
+}
+
+.scrollText {
+  font-size: 9px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.8em;
+  writing-mode: vertical-rl;
+}
+
+.scrollLine {
+  width: 1px;
+  height: 6rem;
+  background: linear-gradient(to bottom, var(--border), transparent);
+}

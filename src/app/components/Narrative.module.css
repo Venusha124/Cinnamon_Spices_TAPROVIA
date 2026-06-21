@@ -1,0 +1,203 @@
+.section {
+  padding: 6rem 0;
+  background-color: var(--background);
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 15rem 0;
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-bottom: 6rem;
+}
+
+@media (min-width: 1024px) {
+  .header {
+    flex-direction: row;
+    align-items: flex-end;
+    margin-bottom: 10rem;
+  }
+}
+
+.titleWrapper {
+  flex: 1;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .titleWrapper {
+    text-align: left;
+  }
+}
+
+.label {
+  display: block;
+  color: var(--accent);
+  font-weight: bold;
+  letter-spacing: 0.8em;
+  text-transform: uppercase;
+  font-size: 10px;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: clamp(3rem, 8vw, 10rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.description {
+  max-width: 36rem;
+  color: var(--text-muted);
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.8;
+  border-left: 1px solid var(--accent-transparent);
+  padding-left: 2rem;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .description {
+    text-align: left;
+    padding-left: 3rem;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+.largeCard {
+  position: relative;
+  height: 24rem;
+  border-radius: 3rem;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+@media (min-width: 1024px) {
+  .largeCard {
+    grid-column: span 8;
+    height: 28rem;
+    border-radius: 5rem;
+  }
+}
+
+.smallCard {
+  position: relative;
+  height: 24rem;
+  border-radius: 3rem;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+@media (min-width: 1024px) {
+  .smallCard {
+    grid-column: span 4;
+    height: 28rem;
+    border-radius: 5rem;
+  }
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 3s ease;
+}
+
+.largeCard:hover .image,
+.smallCard:hover .image {
+  transform: scale(1.1);
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent, transparent);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+@media (min-width: 768px) {
+  .cardOverlay {
+    padding: 5rem;
+  }
+}
+
+.cardTitle {
+  font-family: var(--font-serif);
+  font-size: 2.25rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.05em;
+}
+
+@media (min-width: 768px) {
+  .cardTitle {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5rem;
+  color: var(--accent);
+}
+
+.linkText {
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+}
+
+.icon {
+  transition: transform 0.3s ease;
+}
+
+.link:hover .icon {
+  transform: translateX(1rem);
+}
+
+.cardLabel {
+  display: block;
+  color: var(--accent);
+  font-weight: bold;
+  font-size: 10px;
+  letter-spacing: 0.6em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.smallCardTitle {
+  font-family: var(--font-serif);
+  font-size: 1.875rem;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+@media (min-width: 768px) {
+  .smallCardTitle {
+    font-size: 2.25rem;
+  }
+}
