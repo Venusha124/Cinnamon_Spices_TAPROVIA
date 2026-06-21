@@ -29,7 +29,7 @@ export default function Narrative() {
             />
             <div className={styles.cardOverlay}>
               <h3 className={styles.cardTitle}>The Matara Highlands</h3>
-              <Link href="/explore" className={styles.link}>
+              <Link href="/products" className={styles.link}>
                 <span className={styles.linkText}>Start Journey</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.icon}>
                   <path d="M18 8L22 12L18 16"></path>

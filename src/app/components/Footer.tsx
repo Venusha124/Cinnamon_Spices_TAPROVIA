@@ -29,8 +29,7 @@ export default function Footer() {
               <h4 className={styles.navTitle}>Our Products</h4>
               <ul className={styles.navList}>
                 <li><Link href="/" className={styles.navLink}>Home</Link></li>
-                <li><Link href="/products" className={styles.navLink}>Our Products</Link></li>
-                <li><Link href="/explore" className={styles.navLink}>Explore Products</Link></li>
+                <li><Link href="/products" className={styles.navLink}>Products</Link></li>
                 <li><Link href="/stories" className={styles.navLink}>Stories</Link></li>
               </ul>
             </div>
