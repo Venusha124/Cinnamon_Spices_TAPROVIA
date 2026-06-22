@@ -41,9 +41,8 @@
 
 @media (min-width: 992px) {
   .bentoGrid {
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    height: 800px;
+    grid-template-columns: 3fr 2fr;
+    height: 600px;
     gap: 2rem;
   }
 }
@@ -59,12 +58,6 @@
   border: 1px solid var(--border);
   transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   background: var(--background);
-}
-
-@media (min-width: 992px) {
-  .featureCard {
-    grid-row: span 2;
-  }
 }
 
 .secondaryCard {
@@ -155,13 +148,37 @@
   font-size: 2rem;
 }
 
-.productNotes {
-  font-size: 1rem;
-  color: var(--accent);
+.reviewContainer {
   margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stars {
+  display: flex;
+  gap: 0.25rem;
+  color: var(--accent);
+}
+
+.quote {
+  font-size: 1rem;
+  color: var(--foreground);
   font-style: italic;
   opacity: 0.9;
-  letter-spacing: 0.05em;
+  line-height: 1.4;
+}
+
+.secondaryCard .quote {
+  font-size: 0.875rem;
+}
+
+.reviewer {
+  font-size: 0.75rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.8;
 }
 
 .exploreButton {
