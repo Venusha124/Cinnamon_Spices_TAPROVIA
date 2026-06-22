@@ -4,61 +4,82 @@ import Image from 'next/image';
 import styles from './Stories.module.css';
 
 export default function StoriesPage() {
-  const stories = [
-    {
-      id: 1,
-      title: "The Monsoon Harvest",
-      excerpt: "Discover how the seasonal monsoons shape the unique flavor profile of our finest Alba grade.",
-      image: "/plantation.png",
-      date: "May 2026"
-    },
-    {
-      id: 2,
-      title: "Generations of Craft",
-      excerpt: "Meet the master peelers who have passed down the 45-degree cut technique for over a century.",
-      image: "/artisan.png",
-      date: "April 2026"
-    },
-    {
-      id: 3,
-      title: "From Bark to Bottle",
-      excerpt: "The intricate alchemy of extracting pure, potent cinnamon oil without compromising its therapeutic properties.",
-      image: "/alchemy.png",
-      date: "March 2026"
-    }
-  ];
-
   return (
     <>
       <Header />
       <main className={styles.main}>
-        <div className="container">
-          <div className={styles.hero}>
-            <span className={styles.label}>Journal</span>
-            <h1 className={styles.title}>Our <span className="italic text-muted">Stories.</span></h1>
-            <p className={styles.description}>
-              Chronicles from the highlands. Dive deeper into the art, science, and heritage of True Ceylon Cinnamon.
+        
+        {/* Cinematic Hero */}
+        <section className={styles.hero}>
+          <div className={styles.heroBackground}>
+            <Image 
+              src="/images/stories_hero_estates.png" 
+              alt="Misty Ceylon Estates" 
+              fill 
+              priority
+              className={styles.heroImage} 
+            />
+            <div className={styles.heroOverlay}></div>
+          </div>
+          
+          <div className={styles.heroContent}>
+            <span className={styles.heroLabel}>The Taprovia Legacy</span>
+            <h1 className={styles.heroTitle}>
+              A Century of <span className="italic text-muted">Mastery.</span>
+            </h1>
+            <p className={styles.heroDescription}>
+              Under the stewardship of the 4th Generation, Taprovia continues to preserve the sacred, ancient art of True Ceylon Cinnamon cultivation in the misty highlands of Sri Lanka.
             </p>
           </div>
+        </section>
 
-          <div className={styles.grid}>
-            {stories.map((story) => (
-              <article key={story.id} className={styles.card}>
-                <div className={styles.imageWrapper}>
-                  <Image src={story.image} alt={story.title} fill className={styles.image} />
-                </div>
-                <div className={styles.content}>
-                  <span className={styles.date}>{story.date}</span>
-                  <h2 className={styles.storyTitle}>{story.title}</h2>
-                  <p className={styles.excerpt}>{story.excerpt}</p>
-                  <button className={styles.readMore}>
-                    Read Article <span className={styles.arrow}>→</span>
-                  </button>
-                </div>
-              </article>
-            ))}
+        {/* Asymmetrical 4th Gen Narrative */}
+        <section className={styles.narrativeSection}>
+          <div className={styles.narrativeGrid}>
+            <div className={styles.narrativeText}>
+              <h2 className={styles.narrativeTitle}>
+                The 4th Generation <span className="italic text-muted">Conducting the Craft.</span>
+              </h2>
+              <p className={styles.narrativeParagraph}>
+                For over a hundred years, our family has walked these estates. Today, the 4th generation is conducting the entire symphony of cultivation. We refuse to automate what must be felt by hand. 
+              </p>
+              <p className={styles.narrativeParagraph}>
+                The traditional 45-degree cut, the delicate peeling of the inner bark, and the sun-curing process are all orchestrated by masters whose skills were passed down from their great-grandparents. This unbroken lineage is the secret to the unmatched sweetness and zero-coumarin purity of our Alba quills.
+              </p>
+            </div>
+            
+            <div className={styles.narrativeImageWrapper}>
+              <Image 
+                src="/images/stories_4th_gen_artisan.png" 
+                alt="4th Generation Master Artisan" 
+                fill 
+                className={styles.narrativeImage} 
+              />
+            </div>
           </div>
-        </div>
+        </section>
+
+        {/* Parallax Chapter: The Alchemy */}
+        <section className={styles.chapterSection}>
+          <div className={styles.chapterBackground}>
+            <Image 
+              src="/images/stories_alchemy.png" 
+              alt="Cinnamon Oil Distillation" 
+              fill 
+              className={styles.chapterImage} 
+            />
+            <div className={styles.chapterOverlay}></div>
+          </div>
+          
+          <div className={styles.chapterContent}>
+            <span className={styles.chapterNumber}>CHAPTER 01</span>
+            <h2 className={styles.chapterTitle}>The Alchemy of Extraction</h2>
+            <p className={styles.chapterText}>
+              Beyond the bark lies the essence. Using ancient copper distillation techniques refined over four generations, we gently coax the therapeutic, pure oils from the cinnamon leaves and bark. It is a slow, methodical process that yields an intensely potent extract, capturing the true soul of the spice.
+            </p>
+          </div>
+        </section>
+
       </main>
       <Footer />
     </>

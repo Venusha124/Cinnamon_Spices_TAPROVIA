@@ -1,3 +1,6 @@
+'use client';
+
+import { useEffect, useRef, useState } from 'react';
 import styles from './Testimonials.module.css';
 
 const testimonials = [
@@ -34,6 +37,9 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
+  // Duplicate array for seamless infinite scrolling
+  const duplicatedTestimonials = [...testimonials, ...testimonials];
+
   return (
     <section className={styles.section}>
       <div className="container">
@@ -43,10 +49,12 @@ export default function Testimonials() {
             Voices of <span className="italic text-muted">Authority.</span>
           </h2>
         </div>
+      </div>
         
-        <div className={styles.masonry}>
-          {testimonials.map((testimonial) => (
-            <div key={testimonial.id} className={styles.card}>
+      <div className={styles.marqueeContainer}>
+        <div className={styles.marqueeTrack}>
+          {duplicatedTestimonials.map((testimonial, index) => (
+            <div key={`${testimonial.id}-${index}`} className={styles.card}>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.quoteIcon}>
                 <path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path>
                 <path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path>
