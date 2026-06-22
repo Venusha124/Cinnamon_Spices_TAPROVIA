@@ -1,0 +1,111 @@
+.section {
+  padding: 6rem 0;
+  background-color: var(--color-background);
+  position: relative;
+  overflow: hidden;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.label {
+  display: block;
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-family: var(--font-playfair), serif;
+  font-size: 2.5rem;
+  color: var(--foreground);
+}
+
+.title span {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.mapContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 70vh;
+  min-height: 400px;
+  max-height: 700px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.mapSvg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.1));
+}
+
+.land {
+  fill: #151515;
+  stroke: #c5a059;
+  stroke-width: 2;
+  transition: fill 0.5s ease;
+}
+
+.land:hover {
+  fill: #2a2a2a;
+}
+
+.path {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 4000;
+  stroke-dashoffset: 4000;
+  transition: stroke-dashoffset 3s ease-in-out;
+}
+
+.path.animate {
+  stroke-dashoffset: 0;
+}
+
+.marker {
+  fill: var(--accent);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.marker.animate {
+  opacity: 1;
+}
+
+.globalMarker {
+  fill: #fff;
+  stroke: var(--accent);
+  stroke-width: 6;
+}
+
+.markerText {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 30px;
+  fill: var(--foreground);
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.markerText.animate {
+  opacity: 1;
+}
+
+.globalText {
+  font-size: 36px;
+  font-weight: 700;
+  fill: var(--accent);
+}

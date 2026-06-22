@@ -1,0 +1,61 @@
+.trustBar {
+  width: 100%;
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding: 1rem 0;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.scrollContainer {
+  display: flex;
+  white-space: nowrap;
+  animation: scroll 30s linear infinite;
+  width: max-content;
+}
+
+.scrollContainer:hover {
+  animation-play-state: paused;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 2rem;
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--color-text);
+  text-transform: uppercase;
+}
+
+.icon {
+  color: var(--color-primary);
+  width: 20px;
+  height: 20px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (min-width: 768px) {
+  .trustBar {
+    padding: 1.5rem 0;
+  }
+  
+  .item {
+    font-size: 1rem;
+    padding: 0 4rem;
+  }
+}
