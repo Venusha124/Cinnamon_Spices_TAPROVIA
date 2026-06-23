@@ -26,7 +26,7 @@ export default function Hero() {
     <section className={styles.heroSection}>
       <div className={styles.bgContainer}>
         <Image
-          src="/hero-bg.png"
+          src="/images/cinnamon_estate_real.png"
           alt="Premium Cinnamon Background"
           fill
           priority
