@@ -1,6 +1,25 @@
+"use client";
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion, Variants } from 'framer-motion';
 import styles from './Hero.module.css';
+
+const staggerContainer: Variants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.3,
+    },
+  },
+};
+
+const textRevealVariant: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
 
 export default function Hero() {
   return (
@@ -16,23 +35,28 @@ export default function Hero() {
         <div className={styles.overlay}></div>
       </div>
       
-      <div className={`container ${styles.content}`}>
-        <div className={styles.subtitle}>
+      <motion.div 
+        className={`container ${styles.content}`}
+        variants={staggerContainer}
+        initial="hidden"
+        animate="show"
+      >
+        <motion.div variants={textRevealVariant} className={styles.subtitle}>
           <span className={styles.line}></span>
           Direct from Ceylon
           <span className={styles.line}></span>
-        </div>
+        </motion.div>
         
-        <h1 className={styles.title}>
-          The Pure <br />
-          <span className="italic text-muted">Primal</span> Spice.
-        </h1>
+        <motion.h1 variants={textRevealVariant} className={styles.title}>
+          Pure Origins. <br />
+          <span className="italic text-muted">Extraordinary</span> Taste.
+        </motion.h1>
         
-        <p className={styles.description}>
+        <motion.p variants={textRevealVariant} className={styles.description}>
           Experience the world&apos;s most guarded artisanal secret, sustainably harvested from the sovereign highlands of Sri Lanka.
-        </p>
+        </motion.p>
         
-        <div className={styles.actions}>
+        <motion.div variants={textRevealVariant} className={styles.actions}>
           <button className={styles.primaryButton}>
             <span>Explore the Showroom</span>
           </button>
@@ -45,8 +69,8 @@ export default function Hero() {
               </svg>
             </div>
           </Link>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
       
       <div className={styles.scrollIndicator}>
         <span className={styles.scrollText}>Descend</span>
