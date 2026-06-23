@@ -11,7 +11,7 @@ const faqData = [
   },
   {
     question: "Are your estates certified organic?",
-    answer: "Yes. Taprovia holds EU Organic and USDA Organic certifications. We strictly adhere to ancestral, chemical-free farming methods to guarantee zero-coumarin, pristine cinnamon."
+    answer: "While we are currently in the process of acquiring formal organic certifications, we strictly adhere to ancestral, chemical-free farming methods to guarantee zero-coumarin, pristine cinnamon."
   },
   {
     question: "How is the cinnamon packaged for international shipping?",

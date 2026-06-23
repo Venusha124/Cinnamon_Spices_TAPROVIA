@@ -29,7 +29,7 @@ const pillars = [
   {
     title: "Global Sovereign",
     description: "From our misty highlands directly to the finest kitchens in the world.",
-    image: "/images/hero-bg.png",
+    image: "/hero-bg.png",
     colSpan: 2,
     rowSpan: 1,
   }
