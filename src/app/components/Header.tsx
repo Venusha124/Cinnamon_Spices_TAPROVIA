@@ -7,6 +7,17 @@ import styles from './Header.module.css';
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Track scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check on initial load
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Prevent scrolling when menu is open
   useEffect(() => {
@@ -21,8 +32,8 @@ export default function Header() {
   const closeMenu = () => setIsMobileMenuOpen(false);
 
   return (
-    <div className={styles.headerWrapper}>
-      <div className={styles.marqueeBar}>
+    <div className={`${styles.headerWrapper} ${isScrolled ? styles.wrapperScrolled : ''}`}>
+      <div className={`${styles.marqueeBar} ${isScrolled ? styles.marqueeHidden : ''}`}>
         <div className="container" style={{ display: 'flex' }}>
           <div className="animate-marquee tracking-wide" style={{ whiteSpace: 'nowrap', fontSize: '9px', fontWeight: 'bold' }}>
             <span style={{ margin: '0 32px' }}>EST. 1924 | THE BENCHMARK OF CEYLON</span>
@@ -36,14 +47,16 @@ export default function Header() {
           </div>
         </div>
       </div>
-      <header className={styles.header}>
+      <header className={`${styles.header} ${isScrolled ? styles.headerScrolled : ''}`}>
         <div className={`container ${styles.headerContainer}`}>
           
-          <div className={styles.logoContainer}>
-            <Link href="/" className={styles.logo} onClick={closeMenu}>
-              TAPRO<span className="italic text-accent">VIA</span>
-            </Link>
-            <span className={styles.logoSubtitle}>Sovereign Collection</span>
+          <div className={styles.leftCol}>
+            <div className={styles.logoContainer}>
+              <Link href="/" className={styles.logo} onClick={closeMenu}>
+                TAPRO<span className="italic text-accent">VIA</span>
+              </Link>
+              <span className={styles.logoSubtitle}>Sovereign Collection</span>
+            </div>
           </div>
 
           <nav className={styles.nav}>
@@ -55,11 +68,13 @@ export default function Header() {
             <Link href="/contact" className={styles.navLink}>Contact Us</Link>
           </nav>
 
-          {/* Hamburger Icon */}
-          <button className={styles.hamburgerBtn} onClick={toggleMenu} aria-label="Toggle Menu">
-            <span className={`${styles.hamburgerLine} ${isMobileMenuOpen ? styles.lineOpen1 : ''}`}></span>
-            <span className={`${styles.hamburgerLine} ${isMobileMenuOpen ? styles.lineOpen2 : ''}`}></span>
-          </button>
+          <div className={styles.rightCol}>
+            {/* Hamburger Icon */}
+            <button className={styles.hamburgerBtn} onClick={toggleMenu} aria-label="Toggle Menu">
+              <span className={`${styles.hamburgerLine} ${isMobileMenuOpen ? styles.lineOpen1 : ''}`}></span>
+              <span className={`${styles.hamburgerLine} ${isMobileMenuOpen ? styles.lineOpen2 : ''}`}></span>
+            </button>
+          </div>
         </div>
       </header>
 

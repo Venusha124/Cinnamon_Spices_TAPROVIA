@@ -40,6 +40,13 @@ body {
   flex-direction: column;
 }
 
+body.custom-cursor-active,
+body.custom-cursor-active a,
+body.custom-cursor-active button,
+body.custom-cursor-active .interactive {
+  cursor: none;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-serif);
   font-weight: 300;

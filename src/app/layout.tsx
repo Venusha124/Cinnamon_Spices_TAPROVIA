@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import CustomCursor from "./components/CustomCursor";
+import PageTransition from "./components/PageTransition";
+import Preloader from "./components/Preloader";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -29,7 +32,13 @@ export default function RootLayout({
       className={`${inter.variable} ${playfair.variable}`}
       suppressHydrationWarning
     >
-      <body>{children}</body>
+      <body>
+        <Preloader />
+        <CustomCursor />
+        <PageTransition>
+          {children}
+        </PageTransition>
+      </body>
     </html>
   );
 }

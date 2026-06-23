@@ -22,7 +22,7 @@ export default function Narrative() {
         <div className={styles.grid}>
           <div className={styles.largeCard}>
             <Image
-              src="/plantation.png"
+              src="/images/cinnamon_estate_real.png"
               alt="The Matara Highlands"
               fill
               className={styles.image}

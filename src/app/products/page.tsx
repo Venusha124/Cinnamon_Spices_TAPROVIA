@@ -5,9 +5,22 @@ import Link from 'next/link';
 import styles from './Products.module.css';
 import AnimatedPageHeader from '../components/AnimatedPageHeader';
 
+import Cinnamon3DViewer from '../components/Cinnamon3DViewer';
+
 export default function ProductsPage() {
-  const stickGrades = ["C4/C5", "ALBA", "C5 Special", "C5 Extra", "M", "H1", "H2"];
-  const oils = ["Leaf Oil", "Bark Oil"];
+  const stickGrades = [
+    { name: "C4/C5", available: true },
+    { name: "ALBA", available: false }, // Reserve grade
+    { name: "C5 Special", available: true },
+    { name: "C5 Extra", available: true },
+    { name: "M", available: false },
+    { name: "H1", available: true },
+    { name: "H2", available: true }
+  ];
+  const oils = [
+    { name: "Leaf Oil", available: true },
+    { name: "Bark Oil", available: false }
+  ];
 
   return (
     <>
@@ -23,6 +36,19 @@ export default function ProductsPage() {
             bgAlt="Cinnamon Estates"
           />
         </div>
+
+        <div className="snap-section" style={{ backgroundColor: '#020202' }}>
+          <section className={styles.categorySection} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '4rem' }}>
+            <div className={styles.categoryHeader}>
+              <h2 className={styles.categoryTitle}>The Alba Quill in 3D</h2>
+              <p className={styles.categoryDesc}>Our finest, most tightly rolled reserve grade.</p>
+            </div>
+            <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <Cinnamon3DViewer />
+            </div>
+          </section>
+        </div>
+
         <div className="container">
 
           <div className="snap-section">
@@ -33,13 +59,22 @@ export default function ProductsPage() {
               </div>
               <div className={styles.grid}>
                 {stickGrades.map((grade) => (
-                  <div key={grade} className={styles.card}>
+                  <div key={grade.name} className={styles.card}>
                     <div className={styles.imageWrapper}>
-                      <Image src="/quills.png" alt={`${grade} Cinnamon Quills`} fill className={styles.image} />
+                      <Image src="/quills.png" alt={`${grade.name} Cinnamon Quills`} fill className={styles.image} />
+                      
+                      {/* Availability Badge */}
+                      <div className={`${styles.availabilityBadge} ${grade.available ? styles.available : styles.unavailable}`}>
+                        <span className={styles.statusDot}></span>
+                        {grade.available ? "Available" : "Waitlist"}
+                      </div>
+
                       <div className={styles.overlay}>
                         <div className={styles.overlayContent}>
-                          <Link href="/contact" className={styles.quoteBtn}>Add to Quote</Link>
-                          <h3 className={styles.productName}>{grade}</h3>
+                          <Link href="/contact" className={styles.quoteBtn}>
+                            {grade.available ? "Add to Quote" : "Join Waitlist"}
+                          </Link>
+                          <h3 className={styles.productName}>{grade.name}</h3>
                           <p className={styles.productType}>Premium Stick Grade</p>
                         </div>
                       </div>
@@ -58,13 +93,22 @@ export default function ProductsPage() {
               </div>
               <div className={styles.grid}>
                 {oils.map((oil) => (
-                  <div key={oil} className={styles.card}>
+                  <div key={oil.name} className={styles.card}>
                     <div className={styles.imageWrapper}>
-                      <Image src="/alchemy.png" alt={`${oil} Cinnamon Oil`} fill className={styles.image} />
+                      <Image src="/alchemy.png" alt={`${oil.name} Cinnamon Oil`} fill className={styles.image} />
+                      
+                      {/* Availability Badge */}
+                      <div className={`${styles.availabilityBadge} ${oil.available ? styles.available : styles.unavailable}`}>
+                        <span className={styles.statusDot}></span>
+                        {oil.available ? "Available" : "Waitlist"}
+                      </div>
+
                       <div className={styles.overlay}>
                         <div className={styles.overlayContent}>
-                          <Link href="/contact" className={styles.quoteBtn}>Add to Quote</Link>
-                          <h3 className={styles.productName}>{oil}</h3>
+                          <Link href="/contact" className={styles.quoteBtn}>
+                            {oil.available ? "Add to Quote" : "Join Waitlist"}
+                          </Link>
+                          <h3 className={styles.productName}>{oil.name}</h3>
                           <p className={styles.productType}>Essential Extract</p>
                         </div>
                       </div>
