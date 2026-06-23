@@ -2,9 +2,24 @@
 
 import { useEffect, useRef, useState } from 'react';
 import styles from './InteractiveMap.module.css';
+import { motion, AnimatePresence } from 'framer-motion';
+
+const estatesData = [
+  { id: 'Kurunegala', delay: 0, cx: 400, cy: 900, tx: 425, ty: 910, name: 'Kurunegala', alt: '150m', soil: 'Red Laterite', grade: 'C5 Special' },
+  { id: 'Gampaha', delay: 0.1, cx: 280, cy: 1100, tx: 305, ty: 1110, name: 'Gampaha', alt: '50m', soil: 'Sandy Loam', grade: 'M & H1' },
+  { id: 'Colombo', delay: 0.2, cx: 240, cy: 1200, tx: 265, ty: 1210, name: 'Colombo', alt: '10m', soil: 'Coastal Sand', grade: 'H2' },
+  { id: 'Kalutara', delay: 0.3, cx: 280, cy: 1300, tx: 305, ty: 1310, name: 'Kalutara', alt: '100m', soil: 'Lateritic Gravel', grade: 'C4' },
+  { id: 'Ratnapura', delay: 0.4, cx: 450, cy: 1250, tx: 475, ty: 1260, name: 'Ratnapura Highlands', alt: '600m - 1200m', soil: 'Rich Loam', grade: 'Alba' },
+  { id: 'Badulla', delay: 0.5, cx: 650, cy: 1100, tx: 675, ty: 1110, name: 'Badulla', alt: '600m', soil: 'Red Yellow Podzolic', grade: 'Alba' },
+  { id: 'Monaragala', delay: 0.6, cx: 750, cy: 1250, tx: 775, ty: 1260, name: 'Monaragala', alt: '200m', soil: 'Red Earth', grade: 'C5 Extra' },
+  { id: 'Galle', delay: 0.7, cx: 350, cy: 1450, tx: 375, ty: 1460, name: 'Galle', alt: '30m', soil: 'Laterite', grade: 'H1' },
+  { id: 'Matara', delay: 0.8, cx: 450, cy: 1520, tx: 475, ty: 1530, name: 'Matara', alt: '20m', soil: 'Alluvial', grade: 'M' },
+  { id: 'Hambantota', delay: 0.9, cx: 650, cy: 1450, tx: 675, ty: 1460, name: 'Hambantota', alt: '15m', soil: 'Dry Zone Soil', grade: 'H2' },
+];
 
 export default function InteractiveMap() {
   const [isVisible, setIsVisible] = useState(false);
+  const [activeEstate, setActiveEstate] = useState<typeof estatesData[0] | null>(null);
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -176,46 +191,36 @@ export default function InteractiveMap() {
             />
             
             {/* Markers */}
-            <g key="Kurunegala">
-              <circle cx="400" cy="900" r="15" className={`${styles.marker} ${isVisible ? styles.animate : ''}`} style={{ transitionDelay: '0s' }} />
-              <text x="425" y="910" className={`${styles.markerText} ${isVisible ? styles.animate : ''}`} style={{ transitionDelay: '0.05s' }}>Kurunegala</text>
-            </g>
-            <g key="Gampaha">
-              <circle cx="280" cy="1100" r="15" className={`${styles.marker} ${isVisible ? styles.animate : ''}`} style={{ transitionDelay: '0.1s' }} />
-              <text x="305" y="1110" className={`${styles.markerText} ${isVisible ? styles.animate : ''}`} style={{ transitionDelay: '0.15000000000000002s' }}>Gampaha</text>
-            </g>
-            <g key="Colombo">
-              <circle cx="240" cy="1200" r="15" className={`${styles.marker} ${isVisible ? styles.animate : ''}`} style={{ transitionDelay: '0.2s' }} />
-              <text x="265" y="1210" className={`${styles.markerText} ${isVisible ? styles.animate : ''}`} style={{ transitionDelay: '0.25s' }}>Colombo</text>
-            </g>
-            <g key="Kalutara">
-              <circle cx="280" cy="1300" r="15" className={`${styles.marker} ${isVisible ? styles.animate : ''}`} style={{ transitionDelay: '0.30000000000000004s' }} />
-              <text x="305" y="1310" className={`${styles.markerText} ${isVisible ? styles.animate : ''}`} style={{ transitionDelay: '0.35000000000000003s' }}>Kalutara</text>
-            </g>
-            <g key="Ratnapura">
-              <circle cx="450" cy="1250" r="15" className={`${styles.marker} ${isVisible ? styles.animate : ''}`} style={{ transitionDelay: '0.4s' }} />
-              <text x="475" y="1260" className={`${styles.markerText} ${isVisible ? styles.animate : ''}`} style={{ transitionDelay: '0.45s' }}>Ratnapura</text>
-            </g>
-            <g key="Badulla">
-              <circle cx="650" cy="1100" r="15" className={`${styles.marker} ${isVisible ? styles.animate : ''}`} style={{ transitionDelay: '0.5s' }} />
-              <text x="675" y="1110" className={`${styles.markerText} ${isVisible ? styles.animate : ''}`} style={{ transitionDelay: '0.55s' }}>Badulla</text>
-            </g>
-            <g key="Monaragala">
-              <circle cx="750" cy="1250" r="15" className={`${styles.marker} ${isVisible ? styles.animate : ''}`} style={{ transitionDelay: '0.6000000000000001s' }} />
-              <text x="775" y="1260" className={`${styles.markerText} ${isVisible ? styles.animate : ''}`} style={{ transitionDelay: '0.6500000000000001s' }}>Monaragala</text>
-            </g>
-            <g key="Galle">
-              <circle cx="350" cy="1450" r="15" className={`${styles.marker} ${isVisible ? styles.animate : ''}`} style={{ transitionDelay: '0.7000000000000001s' }} />
-              <text x="375" y="1460" className={`${styles.markerText} ${isVisible ? styles.animate : ''}`} style={{ transitionDelay: '0.7500000000000001s' }}>Galle</text>
-            </g>
-            <g key="Matara">
-              <circle cx="450" cy="1520" r="15" className={`${styles.marker} ${isVisible ? styles.animate : ''}`} style={{ transitionDelay: '0.8s' }} />
-              <text x="475" y="1530" className={`${styles.markerText} ${isVisible ? styles.animate : ''}`} style={{ transitionDelay: '0.8500000000000001s' }}>Matara</text>
-            </g>
-            <g key="Hambantota">
-              <circle cx="650" cy="1450" r="15" className={`${styles.marker} ${isVisible ? styles.animate : ''}`} style={{ transitionDelay: '0.9s' }} />
-              <text x="675" y="1460" className={`${styles.markerText} ${isVisible ? styles.animate : ''}`} style={{ transitionDelay: '0.9500000000000001s' }}>Hambantota</text>
-            </g>
+            {estatesData.map((estate) => (
+              <g 
+                key={estate.id} 
+                onMouseEnter={() => setActiveEstate(estate)}
+                onMouseLeave={() => setActiveEstate(null)}
+                className={styles.markerGroup}
+              >
+                <circle 
+                  cx={estate.cx} 
+                  cy={estate.cy} 
+                  r="25" 
+                  className={styles.invisibleHitbox} 
+                />
+                <circle 
+                  cx={estate.cx} 
+                  cy={estate.cy} 
+                  r="15" 
+                  className={`${styles.marker} ${isVisible ? styles.animate : ''}`} 
+                  style={{ transitionDelay: `${estate.delay}s` }} 
+                />
+                <text 
+                  x={estate.tx} 
+                  y={estate.ty} 
+                  className={`${styles.markerText} ${isVisible ? styles.animate : ''}`} 
+                  style={{ transitionDelay: `${estate.delay + 0.05}s` }}
+                >
+                  {estate.name.split(' ')[0]}
+                </text>
+              </g>
+            ))}
 
             {/* Global Delivery Marker */}
             <g>
@@ -223,6 +228,40 @@ export default function InteractiveMap() {
               <text x="30" y="750" className={`${styles.markerText} ${styles.globalText} ${isVisible ? styles.animate : ''}`} style={{ transitionDelay: '1.6s' }}>Global Delivery</text>
             </g>
           </svg>
+          
+          <AnimatePresence>
+            {activeEstate && (
+              <motion.div 
+                className={styles.tooltip}
+                initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.2 }}
+                style={{ 
+                  left: `calc(50% + ${(activeEstate.cx - 500) * 0.4}px)`, 
+                  top: `calc(50% + ${(activeEstate.cy - 872) * 0.4}px - 100px)` 
+                }}
+              >
+                <div className={styles.tooltipHeader}>
+                  <h4>{activeEstate.name}</h4>
+                </div>
+                <div className={styles.tooltipBody}>
+                  <div className={styles.tooltipRow}>
+                    <span className={styles.tooltipLabel}>Altitude</span>
+                    <span className={styles.tooltipValue}>{activeEstate.alt}</span>
+                  </div>
+                  <div className={styles.tooltipRow}>
+                    <span className={styles.tooltipLabel}>Soil</span>
+                    <span className={styles.tooltipValue}>{activeEstate.soil}</span>
+                  </div>
+                  <div className={styles.tooltipRow}>
+                    <span className={styles.tooltipLabel}>Grade</span>
+                    <span className={styles.tooltipValue}>{activeEstate.grade}</span>
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </div>
     </section>

@@ -2,6 +2,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Image from 'next/image';
 import styles from './Products.module.css';
+import AnimatedPageHeader from '../components/AnimatedPageHeader';
 
 export default function ProductsPage() {
   const stickGrades = ["C4/C5", "ALBA", "C5 Special", "C5 Extra", "M", "H1", "H2"];
@@ -11,14 +12,15 @@ export default function ProductsPage() {
     <>
       <Header />
       <main className={styles.main}>
+        <AnimatedPageHeader 
+          label="Our Collection"
+          titlePrefix="The"
+          titleHighlight="Products."
+          description="Explore our curated selection of premium Ceylon cinnamon. From the ultra-fine Alba quills to our potent, cold-pressed extracts."
+          bgImage="/images/stories_hero_estates.png"
+          bgAlt="Cinnamon Estates"
+        />
         <div className="container">
-          <div className={styles.hero}>
-            <span className={styles.label}>Our Collection</span>
-            <h1 className={styles.title}>The <span className="italic text-muted">Products.</span></h1>
-            <p className={styles.description}>
-              Explore our curated selection of premium Ceylon cinnamon. From the ultra-fine Alba quills to our potent, cold-pressed extracts.
-            </p>
-          </div>
 
           <section className={styles.categorySection}>
             <div className={styles.categoryHeader}>

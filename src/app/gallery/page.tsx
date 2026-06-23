@@ -2,6 +2,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Image from 'next/image';
 import styles from './Gallery.module.css';
+import AnimatedPageHeader from '../components/AnimatedPageHeader';
 
 export default function GalleryPage() {
   const images = [
@@ -15,14 +16,15 @@ export default function GalleryPage() {
     <>
       <Header />
       <main className={styles.main}>
+        <AnimatedPageHeader 
+          label="Visual Archive"
+          titlePrefix="The"
+          titleHighlight="Gallery."
+          description="A curated visual journey through our estates, highlighting the meticulous craft behind every quill."
+          bgImage="/images/stories_hero_estates.png"
+          bgAlt="Gallery Background"
+        />
         <div className="container">
-          <div className={styles.hero}>
-            <span className={styles.label}>Visual Archive</span>
-            <h1 className={styles.title}>The <span className="italic text-muted">Gallery.</span></h1>
-            <p className={styles.description}>
-              A curated visual journey through our estates, highlighting the meticulous craft behind every quill.
-            </p>
-          </div>
 
           <div className={styles.grid}>
             {images.map((img, index) => (

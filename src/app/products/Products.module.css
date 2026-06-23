@@ -1,5 +1,4 @@
 .main {
-  padding-top: 120px; /* Space for fixed header */
   padding-bottom: 6rem;
   background-color: var(--background);
   min-height: 100vh;

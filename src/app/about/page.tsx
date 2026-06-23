@@ -2,20 +2,22 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Image from 'next/image';
 import styles from './About.module.css';
+import AnimatedPageHeader from '../components/AnimatedPageHeader';
 
 export default function AboutPage() {
   return (
     <>
       <Header />
       <main className={styles.main}>
+        <AnimatedPageHeader 
+          label="Our Legacy"
+          titlePrefix="The"
+          titleHighlight="Heritage."
+          description="Since 1924, Taprovia has stood as the guardian of authentic Ceylon cinnamon. Rooted in the rich soils of Sri Lanka, our commitment to purity remains uncompromising."
+          bgImage="/images/stories_hero_estates.png"
+          bgAlt="Heritage Background"
+        />
         <div className="container">
-          <div className={styles.hero}>
-            <span className={styles.label}>Our Legacy</span>
-            <h1 className={styles.title}>The <span className="italic text-muted">Heritage.</span></h1>
-            <p className={styles.description}>
-              Since 1924, Taprovia has stood as the guardian of authentic Ceylon cinnamon. Rooted in the rich soils of Sri Lanka, our commitment to purity remains uncompromising.
-            </p>
-          </div>
 
           <section className={styles.contentSection}>
             <div className={styles.grid}>

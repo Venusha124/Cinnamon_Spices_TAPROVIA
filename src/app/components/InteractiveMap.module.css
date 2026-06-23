@@ -109,3 +109,64 @@
   font-weight: 700;
   fill: var(--accent);
 }
+
+.markerGroup {
+  cursor: pointer;
+}
+
+.invisibleHitbox {
+  fill: transparent;
+}
+
+.markerGroup:hover .marker {
+  fill: #fff;
+  r: 20;
+  box-shadow: 0 0 15px var(--accent);
+  transition: all 0.3s ease;
+}
+
+.tooltip {
+  position: absolute;
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--accent-transparent);
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 280px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+  pointer-events: none;
+  z-index: 10;
+  transform: translate(-50%, -100%);
+}
+
+.tooltipHeader {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.tooltipHeader h4 {
+  color: var(--accent);
+  font-family: var(--font-playfair), serif;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.tooltipRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.tooltipLabel {
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+}
+
+.tooltipValue {
+  color: #fff;
+  font-weight: 500;
+}

@@ -1,20 +1,22 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import styles from './Contact.module.css';
+import AnimatedPageHeader from '../components/AnimatedPageHeader';
 
 export default function ContactPage() {
   return (
     <>
       <Header />
       <main className={styles.main}>
+        <AnimatedPageHeader 
+          label="Reach Out"
+          titlePrefix="Contact"
+          titleHighlight="Us."
+          description="For wholesale inquiries, reserve grade requests, or to learn more about our sustainable practices, please get in touch."
+          bgImage="/images/stories_hero_estates.png"
+          bgAlt="Contact Background"
+        />
         <div className="container">
-          <div className={styles.hero}>
-            <span className={styles.label}>Reach Out</span>
-            <h1 className={styles.title}>Contact <span className="italic text-muted">Us.</span></h1>
-            <p className={styles.description}>
-              For wholesale inquiries, reserve grade requests, or to learn more about our sustainable practices, please get in touch.
-            </p>
-          </div>
 
           <div className={styles.grid}>
             <div className={styles.formContainer}>
