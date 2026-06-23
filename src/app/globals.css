@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
 :root {
   --background: #050505;
   --foreground: #f3efe9;
@@ -16,6 +18,13 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+@media (min-width: 768px) {
+  html {
+    scroll-snap-type: y proximity;
+    scroll-behavior: smooth;
+  }
 }
 
 body {
@@ -114,4 +123,17 @@ button {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent);
+}
+
+/* Snap Scrolling Utility Classes */
+@media (min-width: 768px) {
+  .snap-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    /* Optional: min-height can be omitted if sections already fill the screen, but good for enforcement */
+  }
+  
+  .snap-footer {
+    scroll-snap-align: end;
+  }
 }

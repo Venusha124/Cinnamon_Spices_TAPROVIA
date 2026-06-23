@@ -138,3 +138,26 @@
   cursor: ew-resize;
   margin: 0;
 }
+
+@media (max-width: 640px) {
+  .imageLabelLeft, .imageLabelRight {
+    top: 10px;
+    padding: 6px 10px;
+    font-size: 0.6rem;
+    letter-spacing: 0.05em;
+  }
+  .imageLabelLeft {
+    left: 10px;
+  }
+  .imageLabelRight {
+    right: 10px;
+  }
+  .sliderButton {
+    width: 36px;
+    height: 36px;
+  }
+  .sliderButton svg {
+    width: 14px;
+    height: 14px;
+  }
+}

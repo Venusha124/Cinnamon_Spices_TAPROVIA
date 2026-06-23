@@ -1,0 +1,127 @@
+.formContainer {
+  background: rgba(15, 15, 15, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  padding: 3rem;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+}
+
+.header {
+  margin-bottom: 3rem;
+}
+
+.label {
+  display: block;
+  font-family: var(--font-outfit), sans-serif;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-family: var(--font-playfair), serif;
+  font-size: 2.5rem;
+  color: #fff;
+  font-weight: 300;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.inputGroup {
+  position: relative;
+  width: 100%;
+}
+
+.input, .textarea, .select {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1rem 0;
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.textarea {
+  resize: none;
+}
+
+.select {
+  color: rgba(255, 255, 255, 0.5); /* Placeholder color */
+}
+
+.select option {
+  background: #111;
+  color: #fff;
+}
+
+.input:focus, .textarea:focus, .select:focus {
+  outline: none;
+  border-bottom-color: var(--accent);
+}
+
+/* Floating Label Magic */
+.floatingLabel {
+  position: absolute;
+  left: 0;
+  top: 1rem;
+  color: rgba(255, 255, 255, 0.4);
+  pointer-events: none;
+  transition: 0.3s ease all;
+  font-family: var(--font-sans);
+}
+
+/* When input is focused, OR when input has text (using placeholder-shown trick) */
+.input:focus ~ .floatingLabel,
+.input:not(:placeholder-shown) ~ .floatingLabel,
+.textarea:focus ~ .floatingLabel,
+.textarea:not(:placeholder-shown) ~ .floatingLabel {
+  top: -12px;
+  font-size: 0.75rem;
+  color: var(--accent);
+}
+
+.submitBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(210, 180, 140, 0.5);
+  padding: 1.25rem 2rem;
+  border-radius: 30px;
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 0.875rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  margin-top: 1rem;
+}
+
+.arrowIcon {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.submitBtn:hover {
+  background: var(--accent);
+  color: #000;
+  border-color: var(--accent);
+  box-shadow: 0 0 20px rgba(210, 180, 140, 0.4);
+}
+
+.submitBtn:hover .arrowIcon {
+  transform: translateX(5px);
+}

@@ -40,7 +40,12 @@ export default function BeforeAfterSlider() {
               fill
               className={styles.image}
             />
-            <div className={styles.imageLabelRight}>The Final Quill</div>
+            <div 
+              className={styles.imageLabelRight}
+              style={{ opacity: sliderPosition < 85 ? 1 : 0, transition: 'opacity 0.3s ease' }}
+            >
+              The Final Quill
+            </div>
           </div>
 
           {/* Foreground Image (Before - Raw Bark) with Clip Path */}
@@ -54,7 +59,12 @@ export default function BeforeAfterSlider() {
               fill
               className={styles.image}
             />
-            <div className={styles.imageLabelLeft}>The Raw Craft</div>
+            <div 
+              className={styles.imageLabelLeft}
+              style={{ opacity: sliderPosition > 15 ? 1 : 0, transition: 'opacity 0.3s ease' }}
+            >
+              The Raw Craft
+            </div>
           </div>
 
           {/* Custom Slider Handle */}

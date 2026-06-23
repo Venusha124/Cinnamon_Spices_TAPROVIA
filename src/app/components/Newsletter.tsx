@@ -1,15 +1,17 @@
 "use client";
 
 import styles from './Newsletter.module.css';
+import Image from 'next/image';
 
 export default function Newsletter() {
   return (
     <section className={styles.section}>
       <div className={styles.bgWrapper}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img 
-          src="https://images.unsplash.com/photo-1596522354195-e84ae3c98731?q=80&w=1920&auto=format&fit=crop" 
+        <Image 
+          src="/images/cinnamon_estate.png" 
           alt="Cinnamon plantation" 
+          fill
+          style={{ objectFit: 'cover' }}
           className={styles.bgImage}
         />
         <div className={styles.overlay}></div>

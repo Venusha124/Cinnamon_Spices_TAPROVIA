@@ -11,14 +11,14 @@ export default function StoriesPage() {
     <>
       <Header />
       <main className={styles.main}>
-        <AnimatedHero />
-        <HeritageTimeline />
-        <AnimatedNarrative />
-        <BeforeAfterSlider />
-        <InteractiveMap />
-        <AnimatedChapter />
+        <div className="snap-section"><AnimatedHero /></div>
+        <div className="snap-section"><HeritageTimeline /></div>
+        <div className="snap-section"><AnimatedNarrative /></div>
+        <div className="snap-section"><BeforeAfterSlider /></div>
+        <div className="snap-section"><InteractiveMap /></div>
+        <div className="snap-section"><AnimatedChapter /></div>
       </main>
-      <Footer />
+      <div className="snap-footer"><Footer /></div>
     </>
   );
 }

@@ -14,16 +14,18 @@ export default function Home() {
   return (
     <main>
       <Header />
-      <Hero />
-      <TrustBar />
-      <Narrative />
-      <CuratedCollection />
-      <Collection />
-      <InteractiveMap />
-      <Journey />
-      <Testimonials />
-      <Newsletter />
-      <Footer />
+      <main>
+        <div className="snap-section"><Hero /></div>
+        <div className="snap-section"><TrustBar /></div>
+        <div className="snap-section"><Narrative /></div>
+        <div className="snap-section"><CuratedCollection /></div>
+        <div className="snap-section"><Collection /></div>
+        <div className="snap-section"><InteractiveMap /></div>
+        <div className="snap-section"><Journey /></div>
+        <div className="snap-section"><Testimonials /></div>
+        <div className="snap-section"><Newsletter /></div>
+      </main>
+      <div className="snap-footer"><Footer /></div>
     </main>
   );
 }

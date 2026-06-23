@@ -1,0 +1,81 @@
+.section {
+  position: relative;
+  padding: 12rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  overflow: hidden;
+}
+
+.parallaxBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/plantation.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: 1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(5,5,5,0.95), rgba(5,5,5,0.8));
+  z-index: 2;
+}
+
+.content {
+  position: relative;
+  z-index: 3;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.quoteIcon {
+  width: 48px;
+  height: 48px;
+  color: var(--accent);
+  margin-bottom: 2rem;
+  opacity: 0.5;
+}
+
+.quoteText {
+  font-family: var(--font-playfair), serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.4;
+  color: #fff;
+  font-weight: 300;
+  font-style: italic;
+  margin-bottom: 4rem;
+}
+
+.signatureBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signatureName {
+  font-family: 'Great Vibes', cursive, var(--font-playfair), serif; /* Simulated handwritten font */
+  font-size: 3.5rem;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  transform: rotate(-5deg);
+}
+
+.signatureTitle {
+  font-family: var(--font-outfit), sans-serif;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.875rem;
+}

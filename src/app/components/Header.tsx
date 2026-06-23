@@ -1,7 +1,25 @@
+"use client";
+
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import styles from './Header.module.css';
 
 export default function Header() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Prevent scrolling when menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isMobileMenuOpen]);
+
+  const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+  const closeMenu = () => setIsMobileMenuOpen(false);
+
   return (
     <div className={styles.headerWrapper}>
       <div className={styles.marqueeBar}>
@@ -20,12 +38,14 @@ export default function Header() {
       </div>
       <header className={styles.header}>
         <div className={`container ${styles.headerContainer}`}>
+          
           <div className={styles.logoContainer}>
-            <Link href="/" className={styles.logo}>
+            <Link href="/" className={styles.logo} onClick={closeMenu}>
               TAPRO<span className="italic text-accent">VIA</span>
             </Link>
             <span className={styles.logoSubtitle}>Sovereign Collection</span>
           </div>
+
           <nav className={styles.nav}>
             <Link href="/" className={styles.navLink}>Home</Link>
             <Link href="/products" className={styles.navLink}>Products</Link>
@@ -34,8 +54,36 @@ export default function Header() {
             <Link href="/about" className={styles.navLink}>About Us</Link>
             <Link href="/contact" className={styles.navLink}>Contact Us</Link>
           </nav>
+
+          {/* Hamburger Icon */}
+          <button className={styles.hamburgerBtn} onClick={toggleMenu} aria-label="Toggle Menu">
+            <span className={`${styles.hamburgerLine} ${isMobileMenuOpen ? styles.lineOpen1 : ''}`}></span>
+            <span className={`${styles.hamburgerLine} ${isMobileMenuOpen ? styles.lineOpen2 : ''}`}></span>
+          </button>
         </div>
       </header>
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div 
+            className={styles.mobileMenuOverlay}
+            initial={{ opacity: 0, y: "-100%" }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: "-100%" }}
+            transition={{ duration: 0.5, ease: [0.2, 0.8, 0.2, 1] }}
+          >
+            <nav className={styles.mobileNav}>
+              <Link href="/" className={styles.mobileNavLink} onClick={closeMenu}>Home</Link>
+              <Link href="/products" className={styles.mobileNavLink} onClick={closeMenu}>Products</Link>
+              <Link href="/stories" className={styles.mobileNavLink} onClick={closeMenu}>Stories</Link>
+              <Link href="/gallery" className={styles.mobileNavLink} onClick={closeMenu}>Gallery</Link>
+              <Link href="/about" className={styles.mobileNavLink} onClick={closeMenu}>About Us</Link>
+              <Link href="/contact" className={styles.mobileNavLink} onClick={closeMenu}>Contact Us</Link>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

@@ -1,0 +1,87 @@
+.faqSection {
+  padding: 8rem 0;
+  background-color: #050505;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.label {
+  display: block;
+  font-family: var(--font-outfit), sans-serif;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.title {
+  font-family: var(--font-playfair), serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.2;
+}
+
+.accordionContainer {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faqItem {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2rem 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.openItem {
+  border-bottom-color: var(--accent);
+}
+
+.questionRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.questionText {
+  font-family: var(--font-playfair), serif;
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: 300;
+  transition: color 0.3s ease;
+  margin: 0;
+}
+
+.faqItem:hover .questionText {
+  color: var(--accent);
+}
+
+.iconWrapper {
+  width: 24px;
+  height: 24px;
+  color: var(--accent);
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  flex-shrink: 0;
+}
+
+.iconOpen {
+  transform: rotate(45deg); /* Turns the Plus into an X */
+  color: #fff;
+}
+
+.answerWrapper {
+  overflow: hidden;
+}
+
+.answerText {
+  color: var(--text-muted);
+  line-height: 1.8;
+  font-size: 1.125rem;
+  padding-top: 1.5rem;
+  padding-right: 2rem; /* Give some space from the icon edge */
+}

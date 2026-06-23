@@ -1,0 +1,97 @@
+.section {
+  padding: 8rem 0;
+  background-color: #080808;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.label {
+  display: block;
+  font-family: var(--font-outfit), sans-serif;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.title {
+  font-family: var(--font-playfair), serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.2;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+  backdrop-filter: blur(10px);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(210, 180, 140, 0.3);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.cardInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.memberName {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.memberTitle {
+  font-family: var(--font-outfit), sans-serif;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+}
+
+.divider {
+  width: 40px;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin-bottom: 1.5rem;
+  transition: width 0.4s ease, background-color 0.4s ease;
+}
+
+.card:hover .divider {
+  width: 80px;
+  background-color: var(--accent);
+}
+
+.memberDesc {
+  color: var(--text-muted);
+  line-height: 1.6;
+  font-size: 1rem;
+}

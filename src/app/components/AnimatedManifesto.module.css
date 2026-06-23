@@ -1,0 +1,75 @@
+.section {
+  padding: 12rem 0;
+  background-color: #050505;
+  display: flex;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.manifestoWrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.labelContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.line {
+  height: 1px;
+  width: 60px;
+  background: linear-gradient(to right, transparent, var(--accent), transparent);
+}
+
+.label {
+  font-family: var(--font-outfit), sans-serif;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.spotlightContainer {
+  position: relative;
+  cursor: crosshair;
+  padding: 2rem;
+  border-radius: 20px;
+  background: rgba(10, 10, 10, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
+  overflow: hidden;
+}
+
+.manifestoTextGhost, .manifestoTextGlow {
+  font-family: var(--font-playfair), serif;
+  font-size: clamp(2rem, 4.5vw, 4rem);
+  line-height: 1.5;
+  font-weight: 300;
+  margin: 0;
+  text-align: center;
+}
+
+.manifestoTextGhost {
+  color: rgba(255, 255, 255, 0.08); /* Barely visible silhouette */
+}
+
+.manifestoTextGlow {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  right: 2rem;
+  bottom: 2rem;
+  pointer-events: none; /* Let mouse events pass through to container */
+  
+  /* Text clipping trick */
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+}
