@@ -9,7 +9,7 @@ const estatesData = [
   { id: 'Gampaha', delay: 0.1, cx: 280, cy: 1100, tx: 305, ty: 1110, name: 'Gampaha', alt: '50m', soil: 'Sandy Loam', grade: 'M & H1' },
   { id: 'Colombo', delay: 0.2, cx: 240, cy: 1200, tx: 265, ty: 1210, name: 'Colombo', alt: '10m', soil: 'Coastal Sand', grade: 'H2' },
   { id: 'Kalutara', delay: 0.3, cx: 280, cy: 1300, tx: 305, ty: 1310, name: 'Kalutara', alt: '100m', soil: 'Lateritic Gravel', grade: 'C4' },
-  { id: 'Ratnapura', delay: 0.4, cx: 450, cy: 1250, tx: 475, ty: 1260, name: 'Ratnapura Highlands', alt: '600m - 1200m', soil: 'Rich Loam', grade: 'Alba' },
+  { id: 'Ratnapura', delay: 0.4, cx: 450, cy: 1250, tx: 475, ty: 1260, name: 'Balapitiya Highlands', alt: '600m - 1200m', soil: 'Rich Loam', grade: 'Alba' },
   { id: 'Badulla', delay: 0.5, cx: 650, cy: 1100, tx: 675, ty: 1110, name: 'Badulla', alt: '600m', soil: 'Red Yellow Podzolic', grade: 'Alba' },
   { id: 'Monaragala', delay: 0.6, cx: 750, cy: 1250, tx: 775, ty: 1260, name: 'Monaragala', alt: '200m', soil: 'Red Earth', grade: 'C5 Extra' },
   { id: 'Galle', delay: 0.7, cx: 350, cy: 1450, tx: 375, ty: 1460, name: 'Galle', alt: '30m', soil: 'Laterite', grade: 'H1' },

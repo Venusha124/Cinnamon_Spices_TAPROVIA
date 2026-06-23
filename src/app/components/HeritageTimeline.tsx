@@ -9,7 +9,7 @@ const timelineData = [
   {
     year: "1924",
     title: "The Founding Roots",
-    description: "Our great-grandfather planted the first true Ceylon Cinnamon tree in the misty Ratnapura highlands, establishing a commitment to purity that defines Taprovia.",
+    description: "Our great-grandfather planted the first true Ceylon Cinnamon tree in the misty Balapitiya highlands, establishing a commitment to purity that defines Taprovia.",
     image: "/images/stories_hero_estates.png",
   },
   {

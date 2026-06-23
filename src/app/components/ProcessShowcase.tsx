@@ -9,7 +9,7 @@ const processSteps = [
   {
     id: "cultivation",
     title: "Cultivation",
-    description: "Nurtured in the rich, mineral-dense soils of the Ratnapura highlands. Our trees are grown naturally, free from synthetic chemicals.",
+    description: "Nurtured in the rich, mineral-dense soils of the Balapitiya highlands. Our trees are grown naturally, free from synthetic chemicals.",
     image: "/images/plantation.png",
   },
   {
