@@ -11,7 +11,7 @@
   --text-muted: rgba(243, 239, 233, 0.4);
 
   --font-serif: var(--font-playfair);
-  --font-sans: var(--font-inter);
+  --font-sans: var(--font-outfit);
 }
 
 * {

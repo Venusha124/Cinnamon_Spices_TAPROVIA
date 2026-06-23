@@ -23,12 +23,12 @@ export default function Narrative() {
           <div className={styles.largeCard}>
             <Image
               src="/images/cinnamon_estate_real.png"
-              alt="The Matara Highlands"
+              alt="The TAPROVIA Highlands"
               fill
               className={styles.image}
             />
             <div className={styles.cardOverlay}>
-              <h3 className={styles.cardTitle}>The Matara Highlands</h3>
+              <h3 className={styles.cardTitle}>The TAPROVIA Highlands</h3>
               <Link href="/products" className={styles.link}>
                 <span className={styles.linkText}>Start Journey</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.icon}>

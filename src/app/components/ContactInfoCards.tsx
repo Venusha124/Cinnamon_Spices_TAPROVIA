@@ -5,8 +5,8 @@ import styles from "./ContactInfoCards.module.css";
 
 const infoData = [
   {
-    title: "Headquarters",
-    content: "124 Cinnamon Estate Road,<br/>Matara Highlands,<br/>Sri Lanka",
+    title: "Global Headquarters",
+    content: "124 Cinnamon Estate Road,<br/>TAPROVIA Highlands,<br/>Sri Lanka",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
