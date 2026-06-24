@@ -8,6 +8,7 @@ import PillarsGrid from '../components/PillarsGrid';
 import LeadershipTeam from '../components/LeadershipTeam';
 import FounderQuote from '../components/FounderQuote';
 import VisionMission from '../components/VisionMission';
+import ExperienceCTA from '../components/ExperienceCTA';
 
 export default function AboutPage() {
   return (
@@ -31,6 +32,7 @@ export default function AboutPage() {
         <div className="snap-section"><PillarsGrid /></div>
         <div className="snap-section"><LeadershipTeam /></div>
         <div className="snap-section"><FounderQuote /></div>
+        <div className="snap-section"><ExperienceCTA /></div>
 
       </main>
       <div className="snap-footer"><Footer /></div>
