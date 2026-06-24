@@ -16,7 +16,7 @@ const teamMembers = [
   },
   {
     name: "Venusha Weerasinghe",
-    title: "Marketing & IT Operations Manager",
+    title: "Marketing & IT Operations",
     description: "Bridging the gap between our ancient heritage and the modern world through cutting-edge digital experiences and brand strategy.",
   }
 ];

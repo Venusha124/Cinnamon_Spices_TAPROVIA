@@ -21,7 +21,7 @@ const quotes = [
     id: 3,
     text: "Innovation is the vessel through which our heritage travels. We fuse the timeless artistry of our highlands with modern vision, bringing the authentic essence of TAPROVIA to the world.",
     name: "Venusha Weerasinghe",
-    title: "Marketing & IT Operations Manager"
+    title: "Marketing & IT Operations"
   }
 ];
 
