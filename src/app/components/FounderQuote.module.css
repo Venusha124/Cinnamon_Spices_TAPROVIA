@@ -39,6 +39,15 @@
   text-align: center;
 }
 
+.quotesContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 450px;
+  position: relative;
+  z-index: 3;
+}
+
 .quoteIcon {
   width: 48px;
   height: 48px;

@@ -7,6 +7,8 @@ import ProcessShowcase from '../components/ProcessShowcase';
 import PillarsGrid from '../components/PillarsGrid';
 import LeadershipTeam from '../components/LeadershipTeam';
 import FounderQuote from '../components/FounderQuote';
+import VisionMission from '../components/VisionMission';
+
 export default function AboutPage() {
   return (
     <>
@@ -22,6 +24,8 @@ export default function AboutPage() {
             bgAlt="Heritage Background"
           />
         </div>
+        
+        <div className="snap-section"><VisionMission /></div>
         
         <div className="snap-section"><ProcessShowcase /></div>
         <div className="snap-section"><PillarsGrid /></div>

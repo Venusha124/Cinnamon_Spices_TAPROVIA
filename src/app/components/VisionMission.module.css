@@ -1,0 +1,105 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+@media (min-width: 1024px) {
+  .section {
+    flex-direction: row;
+    min-height: 80vh;
+  }
+}
+
+.panel {
+  flex: 1;
+  padding: 6rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .panel {
+    padding: 8rem 6rem;
+  }
+}
+
+.visionPanel {
+  background-color: #050505;
+  border-right: 1px solid rgba(255,255,255,0.05);
+}
+
+.missionPanel {
+  background-color: #0a0a0a;
+}
+
+.watermark {
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  font-family: var(--font-playfair), serif;
+  font-size: clamp(10rem, 30vw, 35rem);
+  color: rgba(255, 255, 255, 0.015);
+  font-weight: 900;
+  z-index: 0;
+  pointer-events: none;
+  line-height: 0.8;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 500px;
+}
+
+.label {
+  font-family: var(--font-outfit), sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 0.875rem;
+  color: var(--accent);
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.label::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  background-color: var(--accent);
+}
+
+.title {
+  font-family: var(--font-playfair), serif;
+  font-size: clamp(3rem, 4vw, 4.5rem);
+  color: #fff;
+  margin-bottom: 2rem;
+  line-height: 1.1;
+  font-weight: 300;
+}
+
+.description {
+  font-family: var(--font-outfit), sans-serif;
+  color: var(--text-muted);
+  line-height: 1.8;
+  font-size: clamp(1.125rem, 1.2vw, 1.25rem);
+  font-weight: 300;
+}
+
+.visionPanel .title span {
+  color: var(--accent);
+  font-style: italic;
+}
+
+.missionPanel .title span {
+  font-style: italic;
+  opacity: 0.8;
+}
